@@ -2,6 +2,13 @@
 *.csv
 *.csv.gz
 
+.RData
+
+.Rhistory
+
+.idea/
+
+exp/
 
 # Windows image file caches
 Thumbs.db
