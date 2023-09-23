@@ -14,14 +14,14 @@ PARAM <- list()
 PARAM$experimento <- 3210
 
 # Establezco la semilla aleatoria, cambiar por SU primer semilla
-PARAM$semilla <- 770767
+PARAM$semilla <- 374063
 
 # parameetros rpart
 PARAM$rpart_param <- list(
   "cp" = -1,
-  "minsplit" = 300,
-  "minbucket" = 20,
-  "maxdepth" = 10
+  "minsplit" = 250,
+  "minbucket" = 100,
+  "maxdepth" = 14
 )
 
 # parametros  arbol
@@ -43,8 +43,8 @@ dataset <- fread("/home/matias/datasets/dataset_pequeno.csv")
 
 # creo la carpeta donde va el experimento
 dir.create("./exp/", showWarnings = FALSE)
-carpeta_experimento <- paste0("./exp/KA", PARAM$experimento, "/")
-dir.create(paste0("./exp/KA", PARAM$experimento, "/"),
+carpeta_experimento <- paste0("./exp/KAA", PARAM$experimento, "/")
+dir.create(paste0("./exp/KAA", PARAM$experimento, "/"),
   showWarnings = FALSE
 )
 
@@ -106,7 +106,7 @@ for (arbolito in 1:PARAM$num_trees_max) {
     )) # genero la salida
 
     nom_arch <- paste0(
-      "KA", PARAM$experimento, "_",
+      "KAA", PARAM$experimento, "_",
       sprintf("%.3d", arbolito), # para que tenga ceros adelante
       ".csv"
     )

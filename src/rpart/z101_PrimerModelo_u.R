@@ -14,6 +14,7 @@ dataset <- fread("/home/matias/datasets/dataset_pequeno.csv")
 
 dtrain <- dataset[foto_mes == 202107] # defino donde voy a entrenar
 dapply <- dataset[foto_mes == 202109] # defino donde voy a aplicar el modelo
+dtrain[,clase_ternaria:=sample(clase_ternaria)]
 
 # genero el modelo,  aqui se construye el arbol
 # quiero predecir clase_ternaria a partir de el resto de las variables
@@ -56,10 +57,10 @@ dapply[, Predicted := as.numeric(prob_baja2 > 1 / 40)]
 # genero el archivo para Kaggle
 # primero creo la carpeta donde va el experimento
 dir.create("./exp/")
-dir.create("./exp/KA2001")
+dir.create("./exp/KA2002")
 
 # solo los campos para Kaggle
 fwrite(dapply[, list(numero_de_cliente, Predicted)],
-        file = "./exp/KA2001/K101_001.csv",
+        file = "./exp/KA2002/K101_001.csv",
         sep = ","
 )

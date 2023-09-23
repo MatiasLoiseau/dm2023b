@@ -15,16 +15,17 @@ dataset <- fread("/home/matias/datasets/dataset_pequeno.csv")
 dtrain <- dataset[foto_mes == 202107] # defino donde voy a entrenar
 dapply <- dataset[foto_mes == 202109] # defino donde voy a aplicar el modelo
 
+# EJEMPLO PARA CALCULAR LA EDAD
 # genero el modelo,  aqui se construye el arbol
 # quiero predecir clase_ternaria a partir de el resto de las variables
 modelo <- rpart(
-        formula = "clase_ternaria ~ .",
+        formula = "cliente_edad ~ . -numero_de_cliente -cliente_antiguedad -Visa_fechaalta -Master_fechaalta -Master_Fvencimiento -Visa_Fvencimiento",
         data = dtrain, # los datos donde voy a entrenar
         xval = 0,
         cp = 0.00025, # esto significa no limitar la complejidad de los splits
         minsplit = 800, # minima cantidad de registros para que se haga el split
         minbucket = 1, # tamaño minimo de una hoja
-        maxdepth = 10
+        maxdepth = 4
 ) # profundidad maxima del arbol
 
 
@@ -56,10 +57,10 @@ dapply[, Predicted := as.numeric(prob_baja2 > 1 / 40)]
 # genero el archivo para Kaggle
 # primero creo la carpeta donde va el experimento
 dir.create("./exp/")
-dir.create("./exp/KA2001")
+dir.create("./exp/KA2003")
 
 # solo los campos para Kaggle
 fwrite(dapply[, list(numero_de_cliente, Predicted)],
-        file = "./exp/KA2001/K101_001.csv",
+        file = "./exp/KA2003/K101_001.csv",
         sep = ","
 )

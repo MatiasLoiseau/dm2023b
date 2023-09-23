@@ -14,7 +14,7 @@ require("lightgbm")
 # defino los parametros de la corrida, en una lista, la variable global  PARAM
 #  muy pronto esto se leera desde un archivo formato .yaml
 PARAM <- list()
-PARAM$experimento <- "KA4240"
+PARAM$experimento <- "KA4241"
 
 PARAM$input$dataset <- "/home/matias/datasets/dataset_pequeno.csv"
 PARAM$input$training <- c(202107) # meses donde se entrena el modelo
@@ -69,6 +69,9 @@ dir.create(paste0("./exp/", PARAM$experimento, "/"), showWarnings = FALSE)
 setwd(paste0("./exp/", PARAM$experimento, "/"))
 
 
+# COMENTAR ESTO
+# rompo la estructura de la clase meramente para jugar
+dataset [train==1L,clase01:=sample(clase01)]
 
 # dejo los datos en el formato que necesita LightGBM
 dtrain <- lgb.Dataset(
