@@ -13,7 +13,7 @@ Este repositorio contiene material, recursos y proyectos relacionados con la mat
 El repositorio se organiza de la siguiente manera:
 
 - **src**: Códigos utilizados en las clases. Los archivos modificados por mi tienen un _t al final.
-
+- **Tareas**: Tareas de la materia
 ## Recursos extras
 
 Enlaces a recursos externos, bibliografía recomendada y otros materiales de apoyo.
