@@ -267,6 +267,6 @@ dev.off()
 
 # dejo la marca final
 cat(format(Sys.time(), "%Y%m%d %H%M%S"), "\n",
-  file = "zRend.txt",
-  append = TRUE
+    file = "zRend.txt",
+    append = TRUE
 )
