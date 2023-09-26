@@ -11,9 +11,9 @@ require("yaml")
 
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "TS6410"
+PARAM$experimento <- "TS6411"
 
-PARAM$exp_input <- "FE6310"
+PARAM$exp_input <- "FE6311"
 
 # me salteo los meses duros de pandemia, pero llego hasta 201907 en training
 # entreno en 18 meses
@@ -38,7 +38,7 @@ PARAM$train$testing <- c(202107)
 # 1.0 significa NO undersampling ,  0.1  es quedarse con el 10% de los CONTINUA
 PARAM$train$undersampling <- 0.1
 
-PARAM$train$semilla <- 102191 # cambiar por su propia semilla  !!!
+PARAM$train$semilla <- 374063 # cambiar por su propia semilla  !!!
 
 PARAM$home <- "~/buckets/b1/"
 # FIN Parametros del script

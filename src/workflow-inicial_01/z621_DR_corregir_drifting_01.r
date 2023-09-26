@@ -11,9 +11,9 @@ require("yaml")
 
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "DR6210"
+PARAM$experimento <- "DR6211"
 
-PARAM$exp_input <- "CA6110"
+PARAM$exp_input <- "CA6111"
 
 PARAM$variables_intrames <- TRUE # atencion esto esta en TRUE
 
@@ -21,7 +21,7 @@ PARAM$variables_intrames <- TRUE # atencion esto esta en TRUE
 #  "ninguno", "rank_simple", "rank_cero_fijo", "deflacion", "estandarizar"
 PARAM$metodo <- "rank_cero_fijo"
 
-PARAM$home <- "/home/matias/Dropbox/ITBA/Mineria_de_Datos/dm2023b/"
+PARAM$home <- "~/buckets/b1/"
 # FIN Parametros del script
 
 OUTPUT <- list()
